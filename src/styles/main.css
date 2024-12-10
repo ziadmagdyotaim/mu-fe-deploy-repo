@@ -1,0 +1,58 @@
+/* Cairo Font for Arabic */
+@import "@fontsource/cairo";
+
+/* Utility Classes */
+.container {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.list-element-bullet::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 999px;
+}
+
+/* For right-to-left (Arabic) */
+:dir(rtl) .list-element-bullet::before {
+  right: -8px;
+}
+
+/* For left-to-right (English) */
+:dir(ltr) .list-element-bullet::before {
+  left: -8px;
+}
+
+/* Animations */
+.animate-scale-up {
+  transition: transform 0.2s;
+}
+.animate-scale-up:hover {
+  transform: scale(1.2);
+}
+
+.animate-underline {
+  position: relative;
+}
+
+.animate-underline:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate-underline:hover::after {
+  transform: scaleX(1);
+}
